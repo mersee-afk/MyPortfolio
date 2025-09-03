@@ -1,0 +1,74 @@
+#loginForm input {
+  width: 90%;
+  margin: 10px auto;
+  display: block;
+}
+
+#loginForm button {
+  width: 95%;
+}
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: #f5f8ff; color: #333; line-height: 1.6; }
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #0077cc, #00c6ff);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+.hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+.hero p { font-size: 1.2rem; margin-bottom: 20px; }
+.btn {
+  background: white; color: #0077cc; padding: 10px 20px;
+  border-radius: 8px; text-decoration: none; font-weight: bold;
+  transition: 0.3s;
+}
+.btn:hover { background: #ffdd57; }
+
+/* Sections */
+.card {
+  background: white;
+  margin: 30px auto;
+  padding: 25px;
+  max-width: 800px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+.card h2 { margin-bottom: 15px; color: #0077cc; }
+
+/* Forms */
+form input, form select, form button {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+form button {
+  background: #0077cc; color: white; border: none; cursor: pointer;
+}
+form button:hover { background: #005fa3; }
+
+/* Lists */
+ul { list-style: none; margin-top: 10px; }
+ul li {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Charts */
+canvas { margin-top: 20px; max-width: 100%; }
+
+/* Tips */
+#tips ul li { margin: 8px 0; }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  background: #0077cc;
+  color: white;
+}
