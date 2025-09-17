@@ -1,32 +1,41 @@
-#loginForm input {
-  width: 90%;
-  margin: 10px auto;
-  display: block;
-}
-
-#loginForm button {
-  width: 95%;
-}
-
-
+/* Reset */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', sans-serif; background: #f5f8ff; color: #333; line-height: 1.6; }
 
-/* Hero Section */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f8ff;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 120px;   /* space for fixed header */
+  padding-bottom: 70px; /* space for fixed footer */
+}
+
+/* Fixed Header */
 .hero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   background: linear-gradient(to right, #0077cc, #00c6ff);
   color: white;
   text-align: center;
-  padding: 80px 20px;
+  padding: 20px;
 }
-.hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
-.hero p { font-size: 1.2rem; margin-bottom: 20px; }
-.btn {
-  background: white; color: #0077cc; padding: 10px 20px;
-  border-radius: 8px; text-decoration: none; font-weight: bold;
-  transition: 0.3s;
+.hero h1 { font-size: 2rem; margin-bottom: 5px; }
+.hero p { font-size: 1rem; }
+
+/* Fixed Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #0077cc;
+  color: white;
+  text-align: center;
+  padding: 15px;
 }
-.btn:hover { background: #ffdd57; }
 
 /* Sections */
 .card {
@@ -47,9 +56,22 @@ form input, form select, form button {
   border: 1px solid #ccc;
 }
 form button {
-  background: #0077cc; color: white; border: none; cursor: pointer;
+  background: #0077cc;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 form button:hover { background: #005fa3; }
+
+/* Login */
+#loginForm input {
+  width: 90%;
+  margin: 10px auto;
+  display: block;
+}
+#loginForm button {
+  width: 95%;
+}
 
 /* Lists */
 ul { list-style: none; margin-top: 10px; }
@@ -59,16 +81,11 @@ ul li {
 }
 
 /* Charts */
-canvas { margin-top: 20px; max-width: 100%; }
+canvas {
+  margin-top: 20px;
+  max-width: 100%;
+}
 
 /* Tips */
 #tips ul li { margin: 8px 0; }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  margin-top: 30px;
-  background: #0077cc;
-  color: white;
-}

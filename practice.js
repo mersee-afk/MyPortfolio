@@ -8,10 +8,9 @@ loginForm.addEventListener("submit", (e) => {
   let username = document.getElementById("username").value;
   let password = document.getElementById("password").value;
 
-  // Simple hardcoded login
   if (username === "admin" && password === "1234") {
-    document.getElementById("login").style.display = "none"; // Hide login
-    trackerContent.style.display = "block"; // Show tracker
+    document.getElementById("login").style.display = "none";
+    trackerContent.style.display = "block";
   } else {
     loginMessage.textContent = "❌ Invalid username or password!";
   }
