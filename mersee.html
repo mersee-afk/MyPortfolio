@@ -1,118 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Document</title>
-  <link rel="stylesheet" href="mersee.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercy - Portfolio</title>
+  <link rel="stylesheet" href="./mersee.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <h1 style="color: red;">Welcome to HTML</h1>
-  <h2 style="color: blueviolet; background-color: blanchedalmond;">Welcome to HTML</h2>
-  <h3 style="background-color: blue;">Welcome to HTML</h3>
-  <h4>Welcome to HTML</h4>
-  <h5>Welcome to HTML</h5>
-  <h6>Welcome to HTML</h6>
 
-  <p>
-    Lorem ipsum dolor, <a href="https://www.w3schools.com/html/">link text</a> amet consectetur adipisicing elit.
-    <em>Something emphasized</em><br/>
-    <i>Italic example</i>
-  </p>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Mercy</h1>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="theme-toggle">🌙</button>
+    </nav>
+  </header>
 
-  <ol>
-    <li>Mango</li>
-    <li>Grapes</li>
-    <li>Orange</li>
-    <li>Apple</li>
-    <li>Banana</li>
-  </ol>
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="profile.jpg.jpeg" alt="Mercy Profile" class="profile-img">
+    <div class="hero-content">
+      <h2>Hello, I'm <span>Mercy</span></h2>
+      <p>I am <span class="typing"></span></p>
+      <div class="social-icons">
+        <a href="https://github.com/mersee-afk" target="_blank">🐙GitHub</a>
+        <a href="https://linkedin.com/in/mercy-yesudas-90263a357" target="_blank">💼LinkedIn</a>
+        <a href="mailto:mercyyesudas432@gmail.com">📧Email</a>
+      </div>
+      <a href="#projects" class="btn">🚀 View My Work</a>
+    </div>
+  </section>
 
-  
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>I am Mercy, a fresher passionate about <b>Java Development</b>, <b>Frontend</b>, and <b>SQL</b>.  
+       I enjoy building applications, solving coding problems, and exploring new technologies.</p>
+  </section>
 
-  <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" height="250" width="250"></iframe>
+ <!-- Projects Section -->
+<section id="projects" class="projects">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    
+    <div class="project-card">
+      <div class="card-front bg-orange">
+        <h3>Online Quiz System</h3>
+      </div>
+      <div class="card-back">
+        <p>Java-based quiz app with scoring and result generation.</p>
+      </div>
+    </div>
 
-  <ul>
-    <li>Mango</li>
-    <li>Grapes</li>
-    <li>Orange</li>
-    <li>Apple</li>
-    <li>Banana</li>
-  </ul>
+    <div class="project-card">
+      <div class="card-front bg-blue">
+        <h3>Student Management</h3>
+      </div>
+      <div class="card-back">
+        <p>Java CRUD app using ArrayList for managing student records.</p>
+      </div>
+    </div>
 
-  <form>
-    <label>Password:</label>
-    <input type="password" name="password"/><br/><br/>
-    <label>Name:</label>
-    <input type="text" name="name"/><br/><br/>
-  </form>
+    <div class="project-card">
+      <div class="card-front bg-green">
+        <h3>ATM Simulation</h3>
+      </div>
+      <div class="card-back">
+        <p>Java project simulating deposit and withdrawal functions.</p>
+      </div>
+    </div>
 
-  <mark>Highlighted text</mark>
-  <a href="https://www.gtholidays.in/" target="_blank">Click Here</a>
-  <hr/>
-  <u>Underlined sample</u>
+    <div class="project-card">
+      <div class="card-front bg-purple">
+        <h3>Portfolio Website</h3>
+      </div>
+      <div class="card-back">
+        <p>A responsive personal website showcasing my projects.</p>
+      </div>
+    </div>
 
-  <dl>
-    <dt><b>JavaScript</b></dt>
-    <dd>This is a JavaScript description example.</dd>
-  </dl>
-
-  <table border="4">
-    <tr><td>Python</td><td>Python</td><td>Python</td><td>Python</td></tr>
-    <tr><td>Python</td><td>Python</td><td>Python</td><td>Python</td></tr>
-    <tr><td>Python</td><td>Python</td><td>Python</td><td>Python</td></tr>
-    <tr><td>Python</td><td>Python</td><td>Python</td><td>Python</td></tr>
-  </table>
-
-  <video width="340" height="240" controls>
-    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"/>
-    Your browser does not support the video tag.
-  </video>
-
-  
-
-  <b>Bold</b> <strong>Importance</strong>
-
-  <center>
-    <form action="#file" method="post">
-      <table border="1" cellpadding="10">
-        <tr><td>NAME:</td><td><input type="text" name="name" /></td></tr>
-        <tr><td>Age:</td><td><input type="number" name="age" /></td></tr>
-        <tr><td>Address:</td><td><input type="text" name="address" /></td></tr>
-        <tr><td>Date of Birth:</td><td><input type="date" name="dob" /></td></tr>
-        <tr><td>Email ID:</td><td><input type="email" name="email" /></td></tr>
-        <tr><td>Password:</td><td><input type="password" name="password" /></td></tr>
-        <tr>
-          <td>Gender:</td>
-          <td>
-            <input type="radio" name="gender" value="Male" /> M
-            <input type="radio" name="gender" value="Female" /> F
-          </td>
-        </tr>
-        <tr>
-          <td>Hobbies:</td>
-          <td>
-            <input type="checkbox" name="hobby" value="Reading" /> Reading
-            <input type="checkbox" name="hobby" value="Traveling" /> Traveling
-            <input type="checkbox" name="hobby" value="Music" /> Music
-          </td>
-        </tr>
-        <tr><td>Upload file:</td><td><input type="file" name="file" /></td></tr>
-        <tr><td>Reset:</td><td><input type="reset" value="Clear Form" /></td></tr>
-        <tr><td colspan="2"><input type="submit" value="Submit Form" /></td></tr>
-      </table>
-    </form>
-  </center>
-
-  <div>
-    <h2>Welcome to My Website</h2>
-    <p>This is a paragraph inside a div container.</p>
   </div>
+</section>
 
-  <p>This is a <span style="color: yellow;">highlighted</span> word in a sentence.</p>
-  <p>This item costs <s>₹1000</s> ₹750 only!</p>
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skill-bars">
+      <div class="bar"><span>Java</span><div class="progress java"></div></div>
+      <div class="bar"><span>SQL</span><div class="progress sql"></div></div>
+      <div class="bar"><span>HTML</span><div class="progress html"></div></div>
+      <div class="bar"><span>CSS</span><div class="progress css"></div></div>
+      <div class="bar"><span>JavaScript</span><div class="progress js"></div></div>
+    </div>
+  </section>
 
-  <script src="demo.js"></script>
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Mercy. All rights reserved.</p>
+  </footer>
+
+  <script src="./demo.js"></script>
 </body>
 </html>
