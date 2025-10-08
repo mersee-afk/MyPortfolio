@@ -1,75 +1,53 @@
-// ---------- Typing / Roles carousel ----------
-const typedEl = document.getElementById('typed');
-const texts = [
-  'Java Full Stack Developer',
-  'Java Developer',
-  'Software Developer',
-  'Software Engineer'
-];
+// Typing animation
+const typingEl = document.querySelector('.typing');
+const words = ["Java Full Stack Developer", "Java Developer", "Software Developer", "Software Engineer"];
+let i = 0, j = 0, current = "", isDeleting = false;
 
-let tIndex = 0, cIndex = 0, deleting = false;
-
-function typeTick() {
-  const current = texts[tIndex];
-  if(!deleting) {
-    cIndex++;
-    if(cIndex <= current.length) typedEl.textContent = current.slice(0, cIndex);
-    if(cIndex === current.length + 1) {
-      deleting = true;
-      setTimeout(typeTick, 900);
-      return;
-    }
+function type() {
+  current = words[i];
+  typingEl.textContent = isDeleting
+    ? current.substring(0, j--)
+    : current.substring(0, j++);
+  if (!isDeleting && j === current.length + 1) {
+    isDeleting = true;
+    setTimeout(type, 1000);
+  } else if (isDeleting && j === 0) {
+    isDeleting = false;
+    i = (i + 1) % words.length;
+    setTimeout(type, 400);
   } else {
-    cIndex--;
-    typedEl.textContent = current.slice(0, cIndex);
-    if(cIndex === 0) {
-      deleting = false;
-      tIndex = (tIndex + 1) % texts.length;
-    }
+    setTimeout(type, isDeleting ? 60 : 120);
   }
-  setTimeout(typeTick, deleting ? 80 : 100);
 }
-typeTick();
+type();
 
-// ---------- Theme toggle ----------
+// Theme toggle
 const themeToggle = document.getElementById('theme-toggle');
-function setTheme(dark) {
-  document.documentElement.style.setProperty('--bg', dark ? '#060608' : '#f6f7fb');
-  document.documentElement.style.setProperty('--card', dark ? '#0f1724' : '#ffffff');
-  document.documentElement.style.setProperty('--text', dark ? '#e6eef7' : '#0f1724');
-  document.documentElement.style.setProperty('--muted', dark ? '#9aa4b2' : '#6b7280');
-  document.documentElement.style.setProperty('--glass', dark ? 'rgba(255,255,255,0.03)' : 'rgba(255,255,255,0.6)');
-  themeToggle.textContent = dark ? '☀️' : '🌙';
-  localStorage.setItem('themeDark', dark ? '1' : '0');
-}
 themeToggle.addEventListener('click', () => {
-  const cur = localStorage.getItem('themeDark') === '1';
-  setTheme(!cur);
-});
-// initialize
-if(localStorage.getItem('themeDark') === '1') setTheme(true);
-
-// ---------- Mobile nav ----------
-const menuToggle = document.getElementById('menu-toggle');
-const mobileNav = document.getElementById('mobile-nav');
-menuToggle && menuToggle.addEventListener('click', () => {
-  const open = mobileNav.getAttribute('aria-hidden') === 'false';
-  mobileNav.setAttribute('aria-hidden', String(!open));
-  mobileNav.style.display = open ? 'none' : 'flex';
+  document.body.classList.toggle('dark');
+  themeToggle.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
 });
 
-// ---------- Simple contact form handler (optional) ----------
+// Reveal sections on scroll
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.2 };
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(!entry.isIntersecting) return;
+    entry.target.classList.add('show');
+    observer.unobserve(entry.target);
+  });
+}, appearOptions);
+faders.forEach(fader => appearOnScroll.observe(fader));
+
+// Contact form fallback
 const contactForm = document.getElementById('contact-form');
 if(contactForm){
-  contactForm.addEventListener('submit', (e) => {
-    // If you set up Formspree / Netlify Forms you can submit normally.
-    // For now we prevent default and open mailto (graceful fallback).
+  contactForm.addEventListener('submit', e=>{
     e.preventDefault();
-    const name = contactForm.querySelector('[name="name"]').value || '';
-    const email = contactForm.querySelector('[name="email"]').value || '';
-    const message = contactForm.querySelector('[name="message"]').value || '';
-    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:mercyyesudas432@gmail.com?subject=${subject}&body=${body}`;
+    const name = contactForm.querySelector('input[type=text]').value;
+    const email = contactForm.querySelector('input[type=email]').value;
+    const msg = contactForm.querySelector('textarea').value;
+    window.location.href=`mailto:mercyyesudas432@gmail.com?subject=Portfolio%20Contact%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(msg)}%0A%0AEmail:%20${encodeURIComponent(email)}`;
   });
 }
