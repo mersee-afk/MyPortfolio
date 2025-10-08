@@ -1,114 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mercy | Java Developer</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mercy Yesudas — Java Full Stack Developer</title>
+  <meta name="description" content="Mercy — Java Full Stack Developer, Software Engineer. Projects: Student Management, Quiz App, ATM Simulation. GitHub: mersee-afk" />
+  <link rel="stylesheet" href="./mersee.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <h1 class="logo">Mercy<span class="dot">.</span></h1>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button id="theme-toggle">🌙</button>
-    </nav>
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#hero">Mercy<span class="accent">.</span></a>
+
+      <nav class="nav" aria-label="Main Navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certs">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="actions">
+        <a class="btn-outline" id="download-resume" href="https://mersee-afk.github.io/MyPortfolio/" target="_blank" rel="noopener">Resume</a>
+        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <button class="hamburger" id="menu-toggle" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile nav -->
+    <div id="mobile-nav" class="mobile-nav" aria-hidden="true">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact">Contact</a>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <img src="assets/profile.jpg" alt="Mercy Profile" class="profile-img" />
-      <h2>Hello, I’m <span>Mercy Yesudas</span></h2>
-      <h3 class="typing"></h3>
-      <p>Passionate Java Developer eager to build scalable software and learn modern technologies.</p>
-
-      <div class="social-links">
-        <a href="https://github.com/mersee-afk" target="_blank">🐙</a>
-        <a href="https://linkedin.com/in/mercy-yesudas-90263a357" target="_blank">💼</a>
-        <a href="mailto:mercyyesudas432@gmail.com">📧</a>
+  <!-- HERO -->
+  <main>
+    <section id="hero" class="hero container">
+      <div class="hero-left">
+        <img src="./profile.jpg.jpeg" alt="Mercy — profile photo" class="profile-photo" />
       </div>
-      <a href="#projects" class="btn">View My Work</a>
+
+      <div class="hero-right">
+        <h1 class="title">Hi — I’m <span>Mercy</span></h1>
+        <p class="subtitle">A <span id="typed" aria-live="polite"></span></p>
+        <p class="lead">
+          Fresher passionate about building reliable software. I work with Java, SQL and modern frontend tools to
+          deliver practical, maintainable solutions.
+        </p>
+
+        <div class="cta-row">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="mailto:mercyyesudas432@gmail.com" class="btn-ghost">Contact Me</a>
+        </div>
+
+        <div class="socials">
+          <a href="https://github.com/mersee-afk" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a> ·
+          <a href="https://linkedin.com/in/mercy-yesudas-90263a357" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a> ·
+          <a href="tel:+919344261693" aria-label="Phone">+91 93442 61693</a>
+        </div>
+
+        <div class="roles">
+          <span class="chip">Java Full Stack Developer</span>
+          <span class="chip">Java Developer</span>
+          <span class="chip">Software Developer</span>
+          <span class="chip">Software Engineer</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section container">
+      <h2>About Me</h2>
+      <p class="section-desc">
+        I’m a motivated and detail-oriented developer with a foundation in Core Java, OOP, SQL and web technologies.
+        I enjoy building end-to-end applications — from database design and backend services to responsive frontends.
+        Currently learning more about Spring Boot, REST APIs, and modern frontend frameworks.
+      </p>
+      <div class="two-col">
+        <div>
+          <h3>Profile</h3>
+          <ul>
+            <li><strong>Location:</strong> Chennai, India</li>
+            <li><strong>Languages:</strong> Tamil (native), English (proficient), Hindi (proficient)</li>
+            <li><strong>Education:</strong> B.A. English — Alagappa University (2022–2025)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Tools &amp; IDEs</h3>
+          <ul>
+            <li>Eclipse / IntelliJ IDEA / VS Code</li>
+            <li>Git, GitHub, Postman</li>
+            <li>MySQL, JDBC</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section container">
+      <h2>Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">
+          <h4>Java</h4>
+          <div class="meter"><span style="width:90%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>SQL / MySQL</h4>
+          <div class="meter"><span style="width:85%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>HTML / CSS</h4>
+          <div class="meter"><span style="width:95%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>JavaScript (ES6)</h4>
+          <div class="meter"><span style="width:75%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>Spring Boot (Basics)</h4>
+          <div class="meter"><span style="width:60%"></span></div>
+        </div>
+        <div class="skill">
+          <h4>OOP, Data Structures</h4>
+          <div class="meter"><span style="width:80%"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section container">
+      <h2>Selected Projects</h2>
+      <p class="section-desc">Short descriptions and GitHub links — code available in my repos.</p>
+
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <h3>Student Management System</h3>
+          <p>Backend Java + JDBC system to manage student records with MySQL integration and CRUD operations.</p>
+          <div class="proj-actions">
+            <a href="https://github.com/mersee-afk/StudentManagementSystem" target="_blank" rel="noopener">View Code</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Online Quiz Management System</h3>
+          <p>Console-based Java quiz application with dynamic question handling and result generation.</p>
+          <div class="proj-actions">
+            <a href="https://github.com/mersee-afk/Java-Quiz-App" target="_blank" rel="noopener">View Code</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>ATM Simulation System</h3>
+          <p>ATM simulator demonstrating deposit, withdrawal and balance enquiry using Java and file handling.</p>
+          <div class="proj-actions">
+            <a href="https://github.com/mersee-afk/ATMSystem" target="_blank" rel="noopener">View Code</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Portfolio Website</h3>
+          <p>Responsive HTML/CSS/JS portfolio showcasing projects and skills (this site).</p>
+          <div class="proj-actions">
+            <a href="https://github.com/mersee-afk/MyPortfolio" target="_blank" rel="noopener">View Code</a>
+            <a href="https://mersee-afk.github.io/MyPortfolio/" target="_blank" rel="noopener">Live Demo</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certs" class="section container">
+      <h2>Certifications</h2>
+      <ul class="cert-list">
+        <li>Java Full Stack Development — Besant Technologies</li>
+        <li>SQL & Database Management — Besant Technologies</li>
+        <li>Web Development (HTML, CSS, JavaScript) — Besant Technologies</li>
+        <li>Digital Analytics & Marketing — Getin Technologies</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section container contact-section">
+      <h2>Contact</h2>
+      <p class="section-desc">I’m open to internships, fresher roles, and collaboration. Reach out and let’s connect.</p>
+
+      <div class="contact-grid">
+        <form id="contact-form" class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required />
+          </label>
+
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" required />
+          </label>
+
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+
+          <div class="form-row">
+            <button type="submit" class="btn-primary">Send Message</button>
+            <a class="btn-ghost" href="mailto:mercyyesudas432@gmail.com">Or email me</a>
+          </div>
+        </form>
+
+        <aside class="contact-card" aria-hidden="false">
+          <h3>Get in touch</h3>
+          <p><strong>Email:</strong> mercyyesudas432@gmail.com</p>
+          <p><strong>Phone:</strong> +91 93442 61693</p>
+          <p><strong>Location:</strong> Chennai, India</p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/mersee-afk" target="_blank" rel="noopener">mersee-afk</a></p>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 Mercy Yesudas — Java Full Stack Developer • Built with HTML, CSS & JS</small>
     </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>
-      I’m a fresher passionate about <b>Java Development</b>, <b>Frontend</b>, and <b>SQL</b>.  
-      I enjoy coding, solving real-world problems, and continuously improving my skills 
-      through new technologies and projects.
-    </p>
-  </section>
-
-  <!-- Skills Section -->
-  <section id="skills" class="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">Java</div>
-      <div class="skill-card">Spring Boot (Basics)</div>
-      <div class="skill-card">SQL / MySQL</div>
-      <div class="skill-card">HTML5</div>
-      <div class="skill-card">CSS3</div>
-      <div class="skill-card">JavaScript (ES6)</div>
-      <div class="skill-card">Git / GitHub</div>
-      <div class="skill-card">OOPs Concepts</div>
-    </div>
-  </section>
-
-  <!-- Projects Section -->
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-
-      <div class="project-card">
-        <h3>Online Quiz System</h3>
-        <p>Java app to create and attempt quizzes with automatic scoring and result generation.</p>
-      </div>
-
-      <div class="project-card">
-        <h3>Student Management System</h3>
-        <p>Java CRUD application managing student data using ArrayLists and OOP principles.</p>
-      </div>
-
-      <div class="project-card">
-        <h3>ATM Simulation</h3>
-        <p>Console-based Java project simulating deposit, withdraw, and balance enquiry operations.</p>
-      </div>
-
-      <div class="project-card">
-        <h3>Portfolio Website</h3>
-        <p>Personal website built using HTML, CSS, and JavaScript to showcase my skills and projects.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Let’s connect for opportunities or collaboration!</p>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>© 2025 Mercy Yesudas | Java Developer</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="./demo.js"></script>
 </body>
 </html>
