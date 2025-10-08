@@ -1,31 +1,33 @@
-// Typing effect
-const text = ["Java Developer", "Frontend Learner", "Problem Solver"];
+// Typing Effect
+const texts = ["Java Developer", "Frontend Learner", "Problem Solver"];
 let i = 0, j = 0, currentText = "", isDeleting = false;
+const typingElement = document.querySelector(".typing");
 
 function type() {
-  if (i < text.length) {
-    if (!isDeleting && j <= text[i].length) {
-      currentText = text[i].substring(0, j++);
-    } else if (isDeleting && j >= 0) {
-      currentText = text[i].substring(0, j--);
-    }
-    document.querySelector(".typing").textContent = currentText;
+  if (!typingElement) return;
 
-    if (j === text[i].length + 1) {
-      isDeleting = true;
+  if (i < texts.length) {
+    currentText = texts[i].substring(0, j);
+    typingElement.textContent = currentText;
+
+    if (!isDeleting && j < texts[i].length) {
+      j++;
+      setTimeout(type, 100);
+    } else if (isDeleting && j > 0) {
+      j--;
+      setTimeout(type, 60);
+    } else {
+      isDeleting = !isDeleting;
+      if (!isDeleting) i = (i + 1) % texts.length;
       setTimeout(type, 1000);
-    } else if (isDeleting && j === 0) {
-      isDeleting = false;
-      i = (i + 1) % text.length;
     }
-    setTimeout(type, isDeleting ? 100 : 200);
   }
 }
 type();
 
-// Dark mode toggle
-document.getElementById("theme-toggle").addEventListener("click", () => {
+// Dark Mode Toggle
+const themeToggle = document.getElementById("theme-toggle");
+themeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  const toggle = document.getElementById("theme-toggle");
-  toggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+  themeToggle.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 });
